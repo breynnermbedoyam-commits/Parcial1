@@ -1,21 +1,27 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
+
     private String nombreCompleto;
     private String documentoIdentidad;
     private String telefono;
     private String correoElectronico;
-    //Creación de la lista: aquí se asocian las compras del cliente (un cliente puede tener varias)
+
     private List<Compra> listaCompras;
 
     public Cliente(String nombreCompleto, String documentoIdentidad, String telefono,
-                   String correoElectronico){
-        this.nombreCompleto=nombreCompleto;
-        this.documentoIdentidad=documentoIdentidad;
-        this.telefono=telefono;
-        this.correoElectronico=correoElectronico;
+                   String correoElectronico) {
 
-        //Inicializar la lista
+        this.nombreCompleto = nombreCompleto;
+        this.documentoIdentidad = documentoIdentidad;
+        this.telefono = telefono;
+        this.correoElectronico = correoElectronico;
+
         listaCompras = new ArrayList<>();
     }
+
     public String getNombreCompleto() {
         return nombreCompleto;
     }
@@ -52,13 +58,12 @@ public class Cliente {
         return listaCompras;
     }
 
-    //Setter: cambia la lista de compras
     public void setListaCompras(List<Compra> listaCompras) {
         this.listaCompras = listaCompras;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Cliente{" +
                 "nombreCompleto='" + nombreCompleto + '\'' +
                 ", documentoIdentidad='" + documentoIdentidad + '\'' +
@@ -67,10 +72,10 @@ public class Cliente {
                 ", listaCompras=" + listaCompras +
                 '}';
     }
-    //Método agregar compra: asocia una compra al cliente agregándola a su lista
+
     public void agregarCompra(Compra compra) {
         listaCompras.add(compra);
     }
 }
-}
+
 
